@@ -3,12 +3,17 @@ window.onload = function () {
 };
 
 function clear() {
-  main();
+  const slider = document.querySelector("#gridSize");
+  const gridSizeValue = slider.value;
+  custom(gridSizeValue);
 }
 
 function custom(x) {
   const container = document.getElementById("container");
   container.replaceChildren();
+
+  container.style.gridTemplateColumns = `repeat(${x}, 1fr)`;
+  container.style.gridTemplateRows = `repeat(${x}, 1fr)`;
 
   let isMouseDown = false;
 
@@ -40,6 +45,8 @@ function custom(x) {
 function main() {
   const container = document.getElementById("container");
   container.replaceChildren();
+  container.style.gridTemplateColumns = `repeat(16, 1fr)`;
+  container.style.gridTemplateRows = `repeat(16, 1fr)`;
   let isMouseDown = false;
   let isDrawing = false;
 
@@ -71,7 +78,8 @@ function main() {
   }
 }
 
-function gridSize(x) {
+function gridSize(event) {
+  const x = event.target.value;
   document.querySelector("#gridValue").textContent = x;
   document.querySelector("#gridValue2").textContent = x;
   custom(x);
@@ -80,5 +88,5 @@ function gridSize(x) {
 const reset = document.querySelector("#clear");
 reset.addEventListener("click", clear);
 
-const slider = document.querySelector("#slider-container");
-slider.addEventListener("input", gridSize());
+const slider = document.querySelector("#gridSize");
+slider.addEventListener("input", gridSize);
