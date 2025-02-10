@@ -11,6 +11,22 @@
     <div id="header">
       <h1>Etch-A-Sketch</h1>
     </div>
-    <div id="container"></div>
+    <div class="game">
+      <div class="options">
+        <h4>Grid Options</h4>
+        <div class="customize">
+          <button id="clear">Clear</button>
+          <div class="slider-container">
+            <label for="gridSize"
+              >Grid Size: <span id="gridValue">16</span>x<span id="gridValue2"
+                >16</span
+              ></label
+            >
+            <input type="range" id="gridSize" min="16" max="64" value="16" />
+          </div>
+        </div>
+      </div>
+      <div id="container"></div>
+    </div>
   </body>
 </html>

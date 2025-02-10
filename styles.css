@@ -1,8 +1,48 @@
+* {
+  background-color: azure;
+}
+body {
+  margin: 0%;
+}
 #header {
   display: flex;
   justify-content: center;
   color: rgb(242, 71, 117);
   background-color: antiquewhite;
+}
+h1 {
+  background-color: antiquewhite;
+}
+
+.game {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+h4 {
+  font-size: 20px;
+  color: rgb(18, 142, 219);
+  border-bottom: 2px solid black;
+  margin: auto;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+}
+
+.options > :first-child {
+  align-self: center; /* Ensures the first child stays centered */
+  margin-bottom: auto; /* Pushes the first child to the top */
+}
+
+.customize {
+  margin-top: 5px;
+  display: flex;
+  gap: 2rem;
 }
 
 #container {
@@ -11,7 +51,7 @@
   grid-template-rows: repeat(16, 1fr);
   width: 50vw;
   height: 50vh;
-  border: 1px solid black;
+  border: 2px solid black;
   margin-left: auto;
   margin-right: auto;
   margin-top: 10vh;
